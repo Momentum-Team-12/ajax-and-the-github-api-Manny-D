@@ -1,0 +1,27 @@
+#profile {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.name {
+    font-size: xx-large;
+    padding-top: 50px;
+    border: 3px solid red;
+    text: red;
+}
+
+img {
+    border-radius: 50%;
+    border: 1px solid red;
+    width: 25%;
+}
+
+#repoheader {
+    background-color: rgb(224, 217, 217);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
