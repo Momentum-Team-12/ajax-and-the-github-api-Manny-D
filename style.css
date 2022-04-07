@@ -1,19 +1,25 @@
+
+
 #profile {
     display: flex;
     justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 20px;
+}
 
+#profile2 {
+    padding-left: 65px;
+    font-weight: bold;
 }
 
 .name {
     font-size: xx-large;
     padding-top: 50px;
-    border: 3px solid red;
     text: red;
 }
 
 img {
     border-radius: 50%;
-    border: 1px solid red;
     width: 25%;
 }
 
@@ -21,7 +27,16 @@ img {
     background-color: rgb(224, 217, 217);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+    padding: 5px 0px 5px 20px;
+    /* display: flex;
+    flex-direction: column; */
+    margin-left: 20px;
+}
+
+#myrepos {
+    border: 1px solid rgb(224, 217, 217);
+    padding: 30px 0px 30px 30px;
+    margin-left: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }

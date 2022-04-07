@@ -1,5 +1,7 @@
 console.log("Rocketship Ajax - Check in!")
 
+// document.body.style.backgroundImage = "url('https://images6.alphacoders.com/112/thumb-1920-1127012.jpg')";
+
 let profileDiv1 = document.querySelector('#profile')
 
 fetch ('https://api.github.com/users/Manny-D', {
@@ -10,7 +12,7 @@ fetch ('https://api.github.com/users/Manny-D', {
         return response.json()
     })
     .then (function (data) {  // data is what's retuned in line 10
-        console.log('The response is', data.name)
+        console.log('The response is', data)
 
         // test image - working
         let pImg = document.createElement('img')
@@ -32,10 +34,10 @@ fetch ('https://api.github.com/users/Manny-D', {
     method: 'GET',
     headers: {},
 })
-    .then(function(response) {  // response: what you got from code above 
+    .then(function(response) {  
         return response.json()
     })
-    .then (function (data) {  // 
+    .then (function (data) {  
 
         //test - GitHub Info
         let pGhloc = document.createElement('p')
@@ -56,39 +58,41 @@ fetch ('https://api.github.com/users/Manny-D', {
 
     })
 
-// Test - Repo Header - WIP
+// Test - Repo Header - working
 let reposDiv = document.querySelector('#repoheader')
     let pGhRepoText = document.createElement('h2')
-    pGhRepoText.classList.add('repohead')
+    // pGhRepoText.classList.add('repohead')
     pGhRepoText.innerText = `GitHub Repos`
     reposDiv.appendChild(pGhRepoText)
-    
-        
+
 
 // Test - Repo body
-// let pRepoContain = document.querySelector('#myrepos')
-//         fetch ('https://api.github.com/users/Manny-D', {
-//             method: 'GET',
-//             headers: {},
-//         })
-//             .then(function(response) {  
-//                 return response.json()
-//             })
-//             .then (function (data) {  
-//                 console.log('The response is', data.name)
+let reposDiv2 = document.querySelector('#myrepos')
+        fetch ('https://api.github.com/users/Manny-D/repos', {
+            method: 'GET',
+            headers: {},
+        })
+            .then(function(response) {  
+                return response.json()
+            })
+            .then (function (data) {  
+                console.log('The response is', data)
         
-//             //function myRepo (){
-//             let pRepoList = document.createElement('p');
-//                 let a = document.createElement('a');
-//                 let link = document.createTextNode("Click meh!");
-//                 a.appendChild(link);
-//                 a.title = "Click meh!";
-//                 a.href = "https://api.github.com/users/Manny-D/repos"
-//                 pRepoList.appendChild(a);
-//             //}
+            //function myRepo (){
+            let pRepoList = document.createElement('p');
+                let a = document.createElement('a');
+                //let link = document.createTextNode("Profile");
+                let link = document.createTextNode(`${data[0].name}`);
+                a.appendChild(link);
+                a.title = `${data[0].name}`;
+                a.href = `${data[0].html_url}`
+                reposDiv2.appendChild(a);
+        })
 
-//         })
+        //repo URL https://api.github.com/users/Manny-D/repos
+        // data.repo_url.name
 
+            
         // pGhrepo.classList.add('ghLocation')
         // pGhrepo.innerText = `Location: ${data.location}`
         // profileDiv2.appendChild(pGhrepo)
