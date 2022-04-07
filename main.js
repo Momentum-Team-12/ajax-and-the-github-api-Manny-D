@@ -17,14 +17,17 @@ fetch ('https://api.github.com/users/Manny-D', {
         // test image - working
         let pImg = document.createElement('img')
         pImg.classList.add('image')
-        pImg.src = `https://avatars.githubusercontent.com/u/99146530?v=4`
+        pImg.src =`https://avatars.githubusercontent.com/u/99146530?v=4`
+        pImg.onclick = function() {
+            window.location.href = `${data.html_url}`;
+        };
+        document.body.appendChild(pImg);
         profileDiv1.appendChild(pImg)
 
         let nameDiv = document.createElement('p')
         nameDiv.classList.add('name')
         nameDiv.innerText = data.name
         profileDiv1.appendChild(nameDiv)
-    // })
 
 
 //Profile section part 2 - Location, GH URL and GH Username - working
