@@ -1,15 +1,18 @@
 html {
+    font-family: "font-awesome", sans-serif;
+}
+
+p {
     color: yellowgreen;  
 }
 
 a:hover {
-   color: red;
+   color: red; /* not working */
 }
 
 a:link {
     color: yellow;
 }
-
 
 #profile {
     display: flex;
@@ -49,4 +52,9 @@ img {
     margin-left: 20px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.pRepList {
+    border: 1px red solid;
+    padding: 10x;
 }
