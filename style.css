@@ -1,3 +1,14 @@
+html {
+    color: yellowgreen;  
+}
+
+a:hover {
+   color: red;
+}
+
+a:link {
+    color: yellow;
+}
 
 
 #profile {
@@ -15,7 +26,6 @@
 .name {
     font-size: xx-large;
     padding-top: 50px;
-    text: red;
 }
 
 img {

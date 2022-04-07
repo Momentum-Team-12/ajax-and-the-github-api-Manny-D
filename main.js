@@ -1,6 +1,6 @@
 console.log("Rocketship Ajax - Check in!")
 
-// document.body.style.backgroundImage = "url('https://images6.alphacoders.com/112/thumb-1920-1127012.jpg')";
+document.body.style.backgroundImage = "url('https://images6.alphacoders.com/112/thumb-1920-1127012.jpg')";
 
 let profileDiv1 = document.querySelector('#profile')
 
@@ -45,11 +45,19 @@ fetch ('https://api.github.com/users/Manny-D', {
         pGhloc.innerText = `Location: ${data.location}`
         profileDiv2.appendChild(pGhloc)
 
+
         let pGhurl = document.createElement('p')
-        pGhurl.classList.add('url')
-        pGhurl.innerText = `GitHub URL: ${data.url}`
+        // pGhurl.classList.add('url')
+        let a = document.createElement('a')
+        pGhurl.innerText = `GitHub URL:`
+        // profileDiv2.appendChild()
+        let link = document.createTextNode(`${data.login}`)
+        a.appendChild(link)
+        a.title = `${data.login}`
+        a.href = `${data.url}`
         profileDiv2.appendChild(pGhurl)
-        // "https://api.github.com/users/Manny-D"
+        profileDiv2.appendChild(a)
+        
 
         let pGhun = document.createElement('p')
         pGhun.classList.add('username')
@@ -66,7 +74,7 @@ let reposDiv = document.querySelector('#repoheader')
     reposDiv.appendChild(pGhRepoText)
 
 
-// Test - Repo body
+// Test - Repo body - working
 let reposDiv2 = document.querySelector('#myrepos')
         fetch ('https://api.github.com/users/Manny-D/repos', {
             method: 'GET',
@@ -88,14 +96,3 @@ let reposDiv2 = document.querySelector('#myrepos')
                 a.href = `${data[0].html_url}`
                 reposDiv2.appendChild(a);
         })
-
-        //repo URL https://api.github.com/users/Manny-D/repos
-        // data.repo_url.name
-
-            
-        // pGhrepo.classList.add('ghLocation')
-        // pGhrepo.innerText = `Location: ${data.location}`
-        // profileDiv2.appendChild(pGhrepo)
-        //https://api.github.com/users/Manny-D/repos"
-
-        // "my_repos"
